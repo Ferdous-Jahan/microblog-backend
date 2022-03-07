@@ -21,7 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //route middleware
-app.use("/", return "something");
+app.get("/", (req, res) => {
+  res.send("something");
+});
 app.use("/api/user", authRoute);
 app.use("/api/post", postRoute);
 
